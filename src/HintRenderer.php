@@ -24,7 +24,7 @@ final class HintRenderer implements NodeRendererInterface, XmlNodeRendererInterf
 
         $attrs = $node->data->get('attributes');
 
-        $filling        = $childRenderer->renderNodes($node->children());
+        $filling = $childRenderer->renderNodes($node->children());
         $innerSeparator = $childRenderer->getInnerSeparator();
         if ($filling === '') {
             return new HtmlElement('blockquote', $attrs, $innerSeparator);

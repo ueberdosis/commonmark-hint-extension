@@ -2,10 +2,10 @@
 
 namespace Ueberdosis\CommonMark;
 
-use League\CommonMark\Parser\Block\BlockContinueParserInterface;
 use League\CommonMark\Extension\CommonMark\Node\Block\BlockQuote;
 use League\CommonMark\Node\Block\AbstractBlock;
 use League\CommonMark\Parser\Block\BlockContinue;
+use League\CommonMark\Parser\Block\BlockContinueParserInterface;
 use League\CommonMark\Parser\Cursor;
 
 class HintParser implements BlockContinueParserInterface
