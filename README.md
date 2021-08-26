@@ -1,7 +1,7 @@
 # CommonMark Hint Extension
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/ueberdosis/commonmark-hint-extension.svg?style=flat-square)](https://packagist.org/packages/ueberdosis/commonmark-hint-extension)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/ueberdosis/commonmark-hint-extension/run-tests?label=tests)](https://github.com/ueberdosis/commonmark-hint-extension/actions?query=workflow%3ATests+branch%3Amaster)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/ueberdosis/commonmark-hint-extension/run-tests?label=tests)](https://github.com/ueberdosis/commonmark-hint-extension/actions)
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/ueberdosis/commonmark-hint-extension/Check%20&%20fix%20styling?label=code%20style)](https://github.com/ueberdosis/commonmark-hint-extension/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/ueberdosis/commonmark-hint-extension.svg?style=flat-square)](https://packagist.org/packages/ueberdosis/commonmark-hint-extension)
 
