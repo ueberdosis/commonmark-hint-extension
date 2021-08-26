@@ -1,16 +1,16 @@
 {
-    "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "name": "ueberdosis/commonmark-hint-extension",
+    "description": "A hint extension for league/commonmark",
     "keywords": [
-        ":vendor_name",
-        "package_slug"
+        "ueberdosis",
+        "commonmark-hint-extension"
     ],
-    "homepage": "https://github.com/vendor_slug/package_slug",
+    "homepage": "https://github.com/ueberdosis/commonmark-hint-extension",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Hans Pagel",
+            "email": "hans.pagel@ueber.io",
             "role": "Developer"
         }
     ],
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src"
+            "Ueberdosis\\CommonMarkHintExtension\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Ueberdosis\\CommonMarkHintExtension\\Tests\\": "tests"
         }
     },
     "scripts": {

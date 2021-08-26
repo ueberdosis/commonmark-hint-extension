@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Ueberdosis\CommonMarkHintExtension\Tests;
 
 use PHPUnit\Framework\TestCase;
 
