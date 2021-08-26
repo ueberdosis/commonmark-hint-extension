@@ -2,17 +2,15 @@
 
 namespace Ueberdosis\CommonMark;
 
-use League\CommonMark\Extension\CommonMark\Node\Block\BlockQuote;
 use League\CommonMark\Node\Node;
 use League\CommonMark\Renderer\ChildNodeRendererInterface;
 use League\CommonMark\Renderer\NodeRendererInterface;
 use League\CommonMark\Util\HtmlElement;
-use League\CommonMark\Xml\XmlNodeRendererInterface;
 
-final class HintRenderer implements NodeRendererInterface, XmlNodeRendererInterface
+final class HintRenderer implements NodeRendererInterface
 {
     /**
-     * @param BlockQuote $node
+     * @param Hint $node
      *
      * {@inheritDoc}
      *
@@ -20,37 +18,38 @@ final class HintRenderer implements NodeRendererInterface, XmlNodeRendererInterf
      */
     public function render(Node $node, ChildNodeRendererInterface $childRenderer): \Stringable
     {
-        BlockQuote::assertInstanceOf($node);
+        Hint::assertInstanceOf($node);
 
         $attrs = $node->data->get('attributes');
+        isset($attrs['class']) ? $attrs['class'] .= ' hint' : $attrs['class'] = 'hint';
 
-        $filling        = $childRenderer->renderNodes($node->children());
-        $innerSeparator = $childRenderer->getInnerSeparator();
-        if ($filling === '') {
-            return new HtmlElement('blockquote', $attrs, $innerSeparator);
+        if ($type = $node->getType()) {
+            $attrs['class'] = isset($attrs['class']) ? $attrs['class'] . ' ' : '';
+            $attrs['class'] .= $type;
         }
 
-        return new HtmlElement(
-            'blockquote',
-            $attrs,
-            $innerSeparator . $filling . $innerSeparator
+        $title = $node->getTitle();
+        $title = $title
+            ? new HtmlElement(
+                'h2',
+                ['class' => 'hint-title'],
+                $title,
+            )
+            : '';
+
+        $content = new HtmlElement(
+            'p',
+            ['class' => 'hint-content'],
+            $childRenderer->renderNodes($node->children())
         );
-    }
 
-    public function getXmlTagName(Node $node): string
-    {
-        return 'block_quote';
-    }
-
-    /**
-     * @param BlockQuote $node
-     *
-     * @return array<string, scalar>
-     *
-     * @psalm-suppress MoreSpecificImplementedParamType
-     */
-    public function getXmlAttributes(Node $node): array
-    {
-        return [];
+        return new HtmlElement(
+            'div',
+            $attrs,
+            "\n" .
+            $title . "\n" .
+            $content .
+            "\n"
+        );
     }
 }

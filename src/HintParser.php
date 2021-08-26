@@ -2,60 +2,91 @@
 
 namespace Ueberdosis\CommonMark;
 
-use League\CommonMark\Parser\Block\BlockContinueParserInterface;
-use League\CommonMark\Extension\CommonMark\Node\Block\BlockQuote;
+use League\CommonMark\Parser\Cursor;
+use League\CommonMark\Util\RegexHelper;
+use League\CommonMark\Util\ArrayCollection;
 use League\CommonMark\Node\Block\AbstractBlock;
 use League\CommonMark\Parser\Block\BlockContinue;
-use League\CommonMark\Parser\Cursor;
+use League\CommonMark\Parser\Block\AbstractBlockContinueParser;
+use League\CommonMark\Parser\Block\BlockContinueParserInterface;
+use League\CommonMark\Parser\Block\BlockContinueParserWithInlinesInterface;
+use League\CommonMark\Parser\InlineParserEngineInterface;
 
-class HintParser implements BlockContinueParserInterface
+class HintParser extends AbstractBlockContinueParser implements BlockContinueParserWithInlinesInterface
 {
     /** @psalm-readonly */
-    private BlockQuote $block;
+    private Hint $block;
+
+    /** @var ArrayCollection<string> */
+    private ArrayCollection $strings;
 
     public function __construct()
     {
-        $this->block = new BlockQuote();
+        $this->block = new Hint();
+        $this->strings = new ArrayCollection();
     }
 
-    public function getBlock(): BlockQuote
+    public function getBlock(): Hint
     {
         return $this->block;
     }
 
     public function isContainer(): bool
     {
-        return true;
+        return false;
     }
 
     public function canContain(AbstractBlock $childBlock): bool
     {
-        return true;
-    }
-
-    public function tryContinue(Cursor $cursor, BlockContinueParserInterface $activeBlockParser): ?BlockContinue
-    {
-        if (! $cursor->isIndented() && $cursor->getNextNonSpaceCharacter() === '>') {
-            $cursor->advanceToNextNonSpaceOrTab();
-            $cursor->advanceBy(1);
-            $cursor->advanceBySpaceOrTab();
-
-            return BlockContinue::at($cursor);
-        }
-
-        return BlockContinue::none();
+        return false;
     }
 
     public function canHaveLazyContinuationLines(): bool
     {
-        return false;
+        return true;
     }
+
+    public function parseInlines(InlineParserEngineInterface $inlineParser): void
+    {
+        $inlineParser->parse($this->block->getLiteral(), $this->block);
+    }
+
+    public function tryContinue(Cursor $cursor, BlockContinueParserInterface $activeBlockParser): ?BlockContinue
+    {
+        if ($cursor->getLine() === ':::') {
+            return BlockContinue::finished();
+        }
+
+        $cursor->advanceToNextNonSpaceOrTab();
+        $cursor->advanceBySpaceOrTab();
+
+        return BlockContinue::at($cursor);
+    }
+
+    // public function canHaveLazyContinuationLines(): bool
+    // {
+    //     return true;
+    // }
 
     public function addLine(string $line): void
     {
+        $this->strings[] = $line;
     }
 
     public function closeBlock(): void
     {
+        // first line becomes info string
+        $firstLine = $this->strings->first();
+        if ($firstLine === false) {
+            $firstLine = '';
+        }
+
+        $this->block->setHeader(RegexHelper::unescape(\trim($firstLine)));
+
+        if ($this->strings->count() === 1) {
+            $this->block->setLiteral('');
+        } else {
+            $this->block->setLiteral(\implode("\n", $this->strings->slice(1)) . "\n");
+        }
     }
 }

@@ -15,13 +15,10 @@ class HintStartParser implements BlockStartParserInterface
             return BlockStart::none();
         }
 
-        if ($cursor->getNextNonSpaceCharacter() !== '>') {
+        $fence = $cursor->match('/^(?:\:{3,}(?!.*`))/');
+        if ($fence === null) {
             return BlockStart::none();
         }
-
-        $cursor->advanceToNextNonSpaceOrTab();
-        $cursor->advanceBy(1);
-        $cursor->advanceBySpaceOrTab();
 
         return BlockStart::of(new HintParser())->at($cursor);
     }
