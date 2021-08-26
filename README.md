@@ -42,7 +42,7 @@ composer require ueberdosis/commonmark-hint-extension
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\MarkdownConverter;
-use Ueberdosis\CommonMarkHintExtension\HintExtension;
+use Ueberdosis\CommonMark\HintExtension;
 
 // Configure the Environment with all the CommonMark parsers/renderers
 $environment = new Environment();

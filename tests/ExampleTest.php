@@ -1,6 +1,6 @@
 <?php
 
-namespace Ueberdosis\CommonMarkHintExtension\Tests;
+namespace Ueberdosis\CommonMark\Tests;
 
 use PHPUnit\Framework\TestCase;
 
