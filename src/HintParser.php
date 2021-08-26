@@ -63,11 +63,6 @@ class HintParser extends AbstractBlockContinueParser implements BlockContinuePar
         return BlockContinue::at($cursor);
     }
 
-    // public function canHaveLazyContinuationLines(): bool
-    // {
-    //     return true;
-    // }
-
     public function addLine(string $line): void
     {
         $this->strings[] = $line;
