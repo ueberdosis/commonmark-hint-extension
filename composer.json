@@ -15,6 +15,12 @@
             "role": "Developer"
         }
     ],
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/ueberdosis/"
+        }
+    ],
     "require": {
         "php": "^8.0",
         "league/commonmark": "^2.0"
