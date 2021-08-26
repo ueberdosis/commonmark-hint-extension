@@ -2,15 +2,15 @@
 
 namespace Ueberdosis\CommonMark;
 
-use League\CommonMark\Parser\Cursor;
-use League\CommonMark\Util\RegexHelper;
-use League\CommonMark\Util\ArrayCollection;
 use League\CommonMark\Node\Block\AbstractBlock;
-use League\CommonMark\Parser\Block\BlockContinue;
 use League\CommonMark\Parser\Block\AbstractBlockContinueParser;
+use League\CommonMark\Parser\Block\BlockContinue;
 use League\CommonMark\Parser\Block\BlockContinueParserInterface;
 use League\CommonMark\Parser\Block\BlockContinueParserWithInlinesInterface;
+use League\CommonMark\Parser\Cursor;
 use League\CommonMark\Parser\InlineParserEngineInterface;
+use League\CommonMark\Util\ArrayCollection;
+use League\CommonMark\Util\RegexHelper;
 
 class HintParser extends AbstractBlockContinueParser implements BlockContinueParserWithInlinesInterface
 {
