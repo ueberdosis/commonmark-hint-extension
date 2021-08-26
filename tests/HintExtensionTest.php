@@ -2,10 +2,10 @@
 
 namespace Ueberdosis\CommonMark\Tests;
 
-use PHPUnit\Framework\TestCase;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\MarkdownConverter;
+use PHPUnit\Framework\TestCase;
 use Ueberdosis\CommonMark\HintExtension;
 
 class HintExtensionTest extends TestCase
