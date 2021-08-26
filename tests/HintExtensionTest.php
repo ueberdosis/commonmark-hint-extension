@@ -28,6 +28,13 @@ This is how the **Markdown** looks.
 :::
 MARKDOWN;
 
-        echo $converter->convertToHtml($markdown);
+        $this->assertEquals((string) $converter->convertToHtml($markdown), '<div class="hint important">
+    <h2 class="hint-title">
+        Warning!
+    </h2>
+    <p class="hint-content">
+        This is how the <strong>Markdown</strong> looks.
+    </p>
+</div>');
     }
 }

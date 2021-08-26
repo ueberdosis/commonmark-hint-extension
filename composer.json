@@ -2,7 +2,8 @@
     "name": "ueberdosis/commonmark-hint-extension",
     "description": "A hint extension for league/commonmark",
     "keywords": [
-        "ueberdosis",
+        "markdown",
+        "commonmark",
         "commonmark-hint-extension"
     ],
     "homepage": "https://github.com/ueberdosis/commonmark-hint-extension",
@@ -21,7 +22,6 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
         "phpunit/phpunit": "^9.5",
-        "spatie/ray": "^1.28",
         "vimeo/psalm": "^4.8"
     },
     "autoload": {
@@ -38,7 +38,8 @@
         "psalm": "vendor/bin/psalm",
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
-        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
+        "test-watch": "nodemon --exec './vendor/bin/phpunit || exit 1' --ext php"
     },
     "config": {
         "sort-packages": true
