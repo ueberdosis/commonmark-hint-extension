@@ -2,9 +2,9 @@
 
 # CommonMark Hint Extension
 
-[![](https://img.shields.io/packagist/v/ueberdosis/html-to-prosemirror.svg)](https://packagist.org/packages/ueberdosis/html-to-prosemirror)
-[![test](https://github.com/ueberdosis/html-to-prosemirror/workflows/test/badge.svg?branch=main)](https://github.com/ueberdosis/html-to-prosemirror/actions)
-[![](https://img.shields.io/packagist/dt/ueberdosis/html-to-prosemirror.svg)](https://packagist.org/packages/ueberdosis/html-to-prosemirror)
+[![](https://img.shields.io/packagist/v/ueberdosis/commonmark-hint-extension.svg)](https://packagist.org/packages/ueberdosis/commonmark-hint-extension)
+[![Tests](https://github.com/ueberdosis/commonmark-hint-extension/actions/workflows/test.yml/badge.svg)](https://github.com/ueberdosis/commonmark-hint-extension/actions/workflows/test.yml)
+[![](https://img.shields.io/packagist/dt/ueberdosis/commonmark-hint-extension.svg)](https://packagist.org/packages/ueberdosis/commonmark-hint-extension)
 [![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub)](https://github.com/sponsors/ueberdosis)
 
 A hint extension for [league/commonmark](https://github.com/thephpleague/commonmark) that renders the following Markdown as HTML.
