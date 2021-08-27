@@ -3,7 +3,7 @@
 # CommonMark Hint Extension
 
 [![](https://img.shields.io/packagist/v/ueberdosis/html-to-prosemirror.svg)](https://packagist.org/packages/ueberdosis/html-to-prosemirror)
-[![build](https://github.com/ueberdosis/html-to-prosemirror/workflows/build/badge.svg?branch=main)](https://github.com/ueberdosis/html-to-prosemirror/actions)
+[![test](https://github.com/ueberdosis/html-to-prosemirror/workflows/test/badge.svg?branch=main)](https://github.com/ueberdosis/html-to-prosemirror/actions)
 [![](https://img.shields.io/packagist/dt/ueberdosis/html-to-prosemirror.svg)](https://packagist.org/packages/ueberdosis/html-to-prosemirror)
 [![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub)](https://github.com/sponsors/ueberdosis)
 
