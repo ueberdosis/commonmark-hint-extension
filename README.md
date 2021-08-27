@@ -1,9 +1,11 @@
+> We need your support to maintain this package. 💖 https://github.com/sponsors/ueberdosis
+
 # CommonMark Hint Extension
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/ueberdosis/commonmark-hint-extension.svg?style=flat-square)](https://packagist.org/packages/ueberdosis/commonmark-hint-extension)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/ueberdosis/commonmark-hint-extension/run-tests?label=tests)](https://github.com/ueberdosis/commonmark-hint-extension/actions)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/ueberdosis/commonmark-hint-extension/Check%20&%20fix%20styling?label=code%20style)](https://github.com/ueberdosis/commonmark-hint-extension/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/ueberdosis/commonmark-hint-extension.svg?style=flat-square)](https://packagist.org/packages/ueberdosis/commonmark-hint-extension)
+[![](https://img.shields.io/packagist/v/ueberdosis/html-to-prosemirror.svg)](https://packagist.org/packages/ueberdosis/html-to-prosemirror)
+[![build](https://github.com/ueberdosis/html-to-prosemirror/workflows/build/badge.svg?branch=main)](https://github.com/ueberdosis/html-to-prosemirror/actions)
+[![](https://img.shields.io/packagist/dt/ueberdosis/html-to-prosemirror.svg)](https://packagist.org/packages/ueberdosis/html-to-prosemirror)
+[![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub)](https://github.com/sponsors/ueberdosis)
 
 A hint extension for [league/commonmark](https://github.com/thephpleague/commonmark) that renders the following Markdown as HTML.
 
